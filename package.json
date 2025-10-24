@@ -1,0 +1,41 @@
+{
+  "name": "student-welfare-platform",
+  "version": "1.0.0",
+  "description": "学生开发者福利展示平台 - Cloudflare 部署配置",
+  "main": "worker.js",
+  "scripts": {
+    "start": "wrangler dev",
+    "deploy": "wrangler publish",
+    "deploy:pages": "npm run build && wrangler pages publish ./dist",
+    "build": "npm run build:static",
+    "build:static": "mkdir -p dist && cp index.html styles.css script.js test.html PROJECT_README.md dist/",
+    "check": "npm run check:config && npm run check:files && npm run check:worker",
+    "check:config": "node scripts/check-config.js",
+    "check:files": "node scripts/check-files.js",
+    "check:worker": "node scripts/check-worker.js",
+    "predeploy": "npm run check && npm run build",
+    "postinstall": "echo '依赖安装完成，可以开始部署了！'"
+  },
+  "keywords": [
+    "cloudflare",
+    "workers",
+    "static-site",
+    "student-welfare",
+    "frontend"
+  ],
+  "author": "Student Welfare Team",
+  "license": "MIT",
+  "devDependencies": {
+    "@cloudflare/wrangler": "^3.0.0",
+    "wrangler": "^3.0.0"
+  },
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/student-welfare-platform.git"
+  },
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
+  }
+}

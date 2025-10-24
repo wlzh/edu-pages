@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学生开发者福利大全</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Google Adsense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2634092855285462"
+     crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- 头部区域 -->
+        <header class="header">
+            <h1 class="title">🎓 学生开发者福利大全</h1>
+            <p class="subtitle">发现专属于学生的35+项开发工具和学习资源优惠</p>
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="🔍 搜索福利项目..." class="search-input">
+                <button id="filterBtn" class="filter-btn">筛选</button>
+            </div>
+        </header>
+
+        <!-- 筛选器 -->
+        <div id="filterPanel" class="filter-panel">
+            <div class="filter-section">
+                <h4>分类筛选</h4>
+                <div class="filter-tags">
+                    <span class="tag" data-category="开发工具">开发工具</span>
+                    <span class="tag" data-category="云服务">云服务</span>
+                    <span class="tag" data-category="设计工具">设计工具</span>
+                    <span class="tag" data-category="学习平台">学习平台</span>
+                    <span class="tag" data-category="AI工具">AI工具</span>
+                    <span class="tag" data-category="其他优惠">其他优惠</span>
+                </div>
+            </div>
+            <div class="filter-section">
+                <h4>验证方式</h4>
+                <div class="filter-tags">
+                    <span class="tag" data-verify="edu邮箱">edu邮箱</span>
+                    <span class="tag" data-verify="学生证">学生证</span>
+                    <span class="tag" data-verify="其他">其他</span>
+                </div>
+            </div>
+            <button id="clearFilter" class="clear-btn">清除筛选</button>
+        </div>
+
+        <!-- 福利卡片容器 -->
+        <div id="welfareContainer" class="welfare-container">
+            <!-- 福利卡片将通过JavaScript动态生成 -->
+        </div>
+
+        <!-- 加载更多按钮 -->
+        <div class="load-more-container">
+            <button id="loadMoreBtn" class="load-more-btn">加载更多</button>
+        </div>
+
+        <!-- 底部信息 -->
+        <footer class="footer">
+            <p>💡 小贴士：大多数福利都需要.edu邮箱验证，准备好你的学生身份证明！</p>
+            <p>✨ 数据更新时间：2025年 | 共计 <span id="totalCount">35</span> 项福利</p>
+        </footer>
+    </div>
+
+    <!-- 详情弹窗 -->
+    <div id="detailModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
